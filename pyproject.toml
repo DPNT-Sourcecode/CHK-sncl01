@@ -27,5 +27,3 @@ line_length = 79
 known_first_party = ["src", "test"]
 multi_line_output = 3
 include_trailing_comma = true
-
-
