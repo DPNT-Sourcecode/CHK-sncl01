@@ -19,15 +19,18 @@ def checkout(skus):
     # print(count_b)
     # print(count_c)
     # print(count_d)
+    price_a_items = count_a * ITEMS["A"]
 
     if (count_a >= 3) and count_a % 3 == 0:
+        price_a_items = int(count_a / 3) * ITEMS["AAA"]
+    elif (count_a >= 3) and count_a % 3 != 0:
+        price_a_items = (
+            int(count_a / 3) * ITEMS["AAA"]
+            + (count_a - int(count_a / 3)) * ITEMS["A"]
+        )
 
+    print(price_a_items)
 
-    price_a_items = (
-        int(count_a / 3) * ITEMS["AAA"]
-        if count_a >= 3
-        else count_a * ITEMS["A"]
-    )
     price_b_items = (
         int(count_b / 2) * ITEMS["BB"]
         if count_b >= 2
@@ -40,6 +43,7 @@ def checkout(skus):
         + count_c * ITEMS["C"]
         + count_d * ITEMS["D"]
     )
+
 
 
 
