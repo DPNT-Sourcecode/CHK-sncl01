@@ -12,9 +12,17 @@ def checkout(skus):
     count_c = letters.count("C")
     count_d = letters.count("D")
 
-    print(len(skus))
+    if len(skus) != count_a + count_b + count_c + count_d:
+        return -1
 
-    print(count_a)
-    print(count_b)
-    print(count_c)
-    print(count_d)
+    return (
+        count_a * ITEMS["A"]
+        + count_a * ITEMS["A"]
+        + count_a * ITEMS["A"]
+        + count_a * ITEMS["A"]
+    )
+    # print(count_a)
+    # print(count_b)
+    # print(count_c)
+    # print(count_d)
+
