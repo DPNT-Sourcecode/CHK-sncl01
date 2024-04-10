@@ -1,0 +1,8 @@
+[flake8]
+max-line-length = 79
+exclude = .git,__pycache__,.venv,.pytest_cache,package
+ignore =
+  # Ignoring line too long
+  E501
+  # Line break before binary operator
+  W503
