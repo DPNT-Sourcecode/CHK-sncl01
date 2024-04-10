@@ -31,33 +31,23 @@ def checkout(skus):
     price_b_items = count_b * ITEMS["B"]
     price_e_items = ITEMS["E"] if count_e % 2 != 0 else 0
 
-    if count_a >= 3:
-        if count_a >= 5:
-            price_a_items = int(count_a / 5) * ITEMS["AAAAA"]
-            remaining = count_a % 5
-            if remaining:
-                price_a_items += (
-                    int(remaining / 3) * ITEMS["AAA"]
-                    if remaining % 3 == 0
-                    else remaining * ITEMS["A"]
-                )
-        else:
-            remaining = count_a % 3
-            price_a_items = (
-                int(count_a / 3) * ITEMS["AAA"]
-                if remaining
-                else int(count_a / 3) * ITEMS["AAA"]
-                + (count_a - int(count_a / 3) * 3) * ITEMS["A"]
-            )
-
-    # if count_a >= 5:
-    #     price_a_items = int(count_a / 5) * ITEMS["AAAAA"]
-    #     if count_a % 5 != 0:
-    #         price_a_items += _calculate_a_items_price_less_than_five(
-    #             count_a - int(count_a / 5) * 5
+    # if count_a >= 3:
+    #     if count_a >= 5:
+    #         price_a_items = int(count_a / 5) * ITEMS["AAAAA"]
+    #         remaining = count_a % 5
+    #         if remaining != 0:
+    #             price_a_items += (
+    #                 int(remaining / 3) * ITEMS["AAA"]
+    #                 if remaining % 53 == 0
+    #                 else remaining % 5 * ITEMS["A"]
+    #             )
+    #     else:
+    #         price_a_items = (
+    #             int(count_a / 3) * ITEMS["AAA"]
+    #             if count_a % 3 == 0
+    #             else int(count_a / 3) * ITEMS["AAA"]
+    #             + (count_a - int(count_a / 3) * 3) * ITEMS["A"]
     #         )
-    # elif count_a > 2:
-    #     price_a_items = _calculate_a_items_price_less_than_five(count_a)
 
     if count_b >= 2:
         price_b_items = (
@@ -74,18 +64,12 @@ def checkout(skus):
         + price_e_items
     )
 
+    # price_a_items = (
+    #     int(count_a / 3) * ITEMS["AAA"]
+    #     if count_a % 3 == 0
+    #     else int(count_a / 3) * ITEMS["AAA"]
+    #     + (count_a - int(count_a / 3) * 3) * ITEMS["A"]
+    # )
 
-# def _calculate_a_items_price_less_than_five(count):
-#     price = 0
-
-#     if count >= 3:
-#         price = (
-#             int(count / 3) * ITEMS["AAA"]
-#             if count % 3 == 0
-#             else int(count / 3) * ITEMS["AAA"]
-#             + (count - int(count / 3) * 3) * ITEMS["A"]
-#         )
-
-#     return price
 
 
