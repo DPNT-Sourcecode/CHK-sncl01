@@ -13,4 +13,3 @@ def test_checkout_solution():
     assert checkout("BB") == 45
 
     assert checkout("AAABBAC") == 245
-
