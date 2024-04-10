@@ -20,7 +20,9 @@ def checkout(skus):
     # print(count_c)
     # print(count_d)
 
-    if count_a % 3 == 0
+    print()
+
+    price_a_items = int(count_a / 3)
 
     return (
         count_a * ITEMS["A"]
@@ -28,5 +30,6 @@ def checkout(skus):
         + count_c * ITEMS["C"]
         + count_d * ITEMS["D"]
     )
+
 
 
