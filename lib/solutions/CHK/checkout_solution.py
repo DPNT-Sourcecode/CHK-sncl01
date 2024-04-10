@@ -1,6 +1,6 @@
 import re
 
-ITEMS = {"A": 50, "B": 30, "C": 20, "D": 15}
+ITEMS = {"A": 50, "B": 30, "C": 20, "D": 15, "AAA": 130, "BB": 45}
 
 
 # noinspection PyUnusedLocal
@@ -20,11 +20,18 @@ def checkout(skus):
     # print(count_c)
     # print(count_d)
 
+    if (count_a >= 3) and count_a % 3 == 0:
+
+
     price_a_items = (
-        int(count_a / 3) * ITEMS["A"] if count_a >= 3 else count_a * ITEMS["A"]
+        int(count_a / 3) * ITEMS["AAA"]
+        if count_a >= 3
+        else count_a * ITEMS["A"]
     )
     price_b_items = (
-        int(count_b / 2) * ITEMS["B"] if count_b >= 2 else count_b * ITEMS["B"]
+        int(count_b / 2) * ITEMS["BB"]
+        if count_b >= 2
+        else count_b * ITEMS["B"]
     )
 
     return (
@@ -33,6 +40,7 @@ def checkout(skus):
         + count_c * ITEMS["C"]
         + count_d * ITEMS["D"]
     )
+
 
 
 
