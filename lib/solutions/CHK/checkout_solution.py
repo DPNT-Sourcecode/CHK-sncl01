@@ -15,14 +15,18 @@ def checkout(skus):
     if len(skus) != count_a + count_b + count_c + count_d:
         return -1
 
-    return (
-        count_a * ITEMS["A"]
-        + count_a * ITEMS["A"]
-        + count_a * ITEMS["A"]
-        + count_a * ITEMS["A"]
-    )
     # print(count_a)
     # print(count_b)
     # print(count_c)
     # print(count_d)
+
+    if count_a % 3 == 0
+
+    return (
+        count_a * ITEMS["A"]
+        + count_b * ITEMS["B"]
+        + count_c * ITEMS["C"]
+        + count_d * ITEMS["D"]
+    )
+
 
