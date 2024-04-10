@@ -62,6 +62,9 @@ def checkout(skus):
             else int(count_b / 2) * ITEMS["BB"] + ITEMS["B"]
         )
 
+    if count_e >=2:
+
+
     return (
         price_a_items
         + price_b_items
@@ -69,6 +72,7 @@ def checkout(skus):
         + count_d * ITEMS["D"]
         + price_e_items
     )
+
 
 
 
