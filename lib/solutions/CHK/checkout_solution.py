@@ -25,6 +25,9 @@ def checkout(skus):
     if len(skus) != count_a + count_b + count_c + count_d + count_e:
         return -1
 
+    e_pairs = int(count_e / 2)
+    count_b = count_b if not e_pairs else count_b - e_pairs
+
     price_a_items = count_a * ITEMS["A"]
     price_b_items = count_b * ITEMS["B"]
 
@@ -48,7 +51,9 @@ def checkout(skus):
         + price_b_items
         + count_c * ITEMS["C"]
         + count_d * ITEMS["D"]
+        + count_e * ITEMS["E"]
     )
+
 
 
 
