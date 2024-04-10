@@ -27,19 +27,30 @@ def checkout(skus):
 
     e_pairs = int(count_e / 2)
     count_b = count_b if not e_pairs else count_b - e_pairs
-
     price_a_items = count_a * ITEMS["A"]
     price_b_items = count_b * ITEMS["B"]
     price_e_items = ITEMS["E"] if count_e % 2 != 0 else 0
 
-    if count_a >= 5:
-        price_a_items = int(count_a / 5) * ITEMS["AAAAA"]
-        if count_a % 5 != 0:
-            price_a_items += _calculate_a_items_price_less_than_five(
-                count_a - int(count_a / 5) * 5
-            )
-    elif count_a > 2:
-        price_a_items = _calculate_a_items_price_less_than_five(count_a)
+    if count_a >= 3:
+        if count_a >= 5:
+            price_a_items = int(count_a / 5) * ITEMS["AAAAA"]
+            remaining = count_a % 5
+            if remaining:
+                price_a_items += (
+                    int(remaining / 3) * ITEMS["AAA"]
+                    if remaining % 3 == 0
+                    else int(remaining / 3) * ITEMS["AAA"]
+                )
+                +(count - int(count / 3) * 3) * ITEMS["A"]
+
+    # if count_a >= 5:
+    #     price_a_items = int(count_a / 5) * ITEMS["AAAAA"]
+    #     if count_a % 5 != 0:
+    #         price_a_items += _calculate_a_items_price_less_than_five(
+    #             count_a - int(count_a / 5) * 5
+    #         )
+    # elif count_a > 2:
+    #     price_a_items = _calculate_a_items_price_less_than_five(count_a)
 
     if count_b >= 2:
         price_b_items = (
@@ -57,15 +68,16 @@ def checkout(skus):
     )
 
 
-def _calculate_a_items_price_less_than_five(count):
-    price = 0
+# def _calculate_a_items_price_less_than_five(count):
+#     price = 0
 
-    if count >= 3:
-        price = (
-            int(count / 3) * ITEMS["AAA"]
-            if count % 3 == 0
-            else int(count / 3) * ITEMS["AAA"]
-            + (count - int(count / 3) * 3) * ITEMS["A"]
-        )
+#     if count >= 3:
+#         price = (
+#             int(count / 3) * ITEMS["AAA"]
+#             if count % 3 == 0
+#             else int(count / 3) * ITEMS["AAA"]
+#             + (count - int(count / 3) * 3) * ITEMS["A"]
+#         )
 
-    return price
+#     return price
+
