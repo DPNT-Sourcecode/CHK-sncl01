@@ -38,7 +38,7 @@ def checkout(skus):
             price_a_items += _calculate_a_items_price_less_than_five(
                 count_a - int(count_a / 5) * 5
             )
-    elif count_a > 1:
+    elif count_a > 2:
         price_a_items = _calculate_a_items_price_less_than_five(count_a)
 
     if count_b >= 2:
@@ -59,7 +59,6 @@ def checkout(skus):
 
 def _calculate_a_items_price_less_than_five(count):
     price = 0
-    print(count)
 
     if count >= 3:
         price = (
@@ -68,8 +67,9 @@ def _calculate_a_items_price_less_than_five(count):
             else int(count / 3) * ITEMS["AAA"]
             + (count - int(count / 3) * 3) * ITEMS["A"]
         )
-    print(price)
+
     return price
+
 
 
 

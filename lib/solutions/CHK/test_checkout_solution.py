@@ -10,9 +10,13 @@ def test_checkout_solution():
     assert checkout("D") == 15
     assert checkout("E") == 40
 
+    assert checkout("AA") == 100
     assert checkout("AAA") == 130
     assert checkout("AAAAA") == 200
+    assert checkout("AAAAAA") == 250
+    assert checkout("AAAAAA") == 300
     assert checkout("BB") == 45
 
     assert checkout("AAABBACBB") == 290
     assert checkout("AAABBACBBEE") == 275
+
