@@ -69,8 +69,3 @@ def _calculate_a_items_price_less_than_five(count):
         )
 
     return price
-
-
-
-
-
