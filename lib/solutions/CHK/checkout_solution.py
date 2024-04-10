@@ -29,7 +29,7 @@ def checkout(skus):
     count_b = count_b - e_pairs if count_b and e_pairs else count_b
     price_a_items = count_a * ITEMS["A"]
     price_b_items = count_b * ITEMS["B"]
-    price_e_items = count_e * ITEMS["E"]
+    price_e_items = count_e * ITEMS["E"] if not count_b else 0
 
     if count_a >= 3:
         if count_a >= 5:
@@ -62,9 +62,6 @@ def checkout(skus):
             else int(count_b / 2) * ITEMS["BB"] + ITEMS["B"]
         )
 
-    if count_e >=2:
-
-
     return (
         price_a_items
         + price_b_items
@@ -72,6 +69,7 @@ def checkout(skus):
         + count_d * ITEMS["D"]
         + price_e_items
     )
+
 
 
 
