@@ -1,6 +1,15 @@
 import re
 
-ITEMS = {"A": 50, "B": 30, "C": 20, "D": 15, "AAA": 130, "BB": 45}
+ITEMS = {
+    "A": 50,
+    "B": 30,
+    "C": 20,
+    "D": 15,
+    "E": 40,
+    "AAA": 130,
+    "AAAAA": 200,
+    "BB": 45,
+}
 
 
 # noinspection PyUnusedLocal
@@ -39,5 +48,6 @@ def checkout(skus):
         + count_c * ITEMS["C"]
         + count_d * ITEMS["D"]
     )
+
 
 
