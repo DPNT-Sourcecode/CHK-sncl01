@@ -21,7 +21,6 @@ def checkout(skus):
     count_c = letters.count("C")
     count_d = letters.count("D")
     count_e = letters.count("E")
-    print(count_e)
 
     if len(skus) != count_a + count_b + count_c + count_d + count_e:
         return -1
@@ -31,6 +30,7 @@ def checkout(skus):
     price_a_items = count_a * ITEMS["A"]
     price_b_items = count_b * ITEMS["B"]
     price_e_items = count_e * ITEMS["E"]
+    print(count_e * ITEMS["E"])
 
     if count_a >= 3:
         if count_a >= 5:
@@ -63,6 +63,8 @@ def checkout(skus):
             else int(count_b / 2) * ITEMS["BB"] + ITEMS["B"]
         )
 
+    print(price_b_items)
+
     return (
         price_a_items
         + price_b_items
@@ -70,3 +72,4 @@ def checkout(skus):
         + count_d * ITEMS["D"]
         + price_e_items
     )
+
