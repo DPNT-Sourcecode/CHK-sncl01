@@ -14,5 +14,7 @@ def test_checkout_solution():
     assert checkout("BB") == 45
 
     assert checkout("AAABBACBB") == 290
+    assert checkout("AAABBACBBEE") == 275
+
 
 

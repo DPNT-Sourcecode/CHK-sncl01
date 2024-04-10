@@ -20,8 +20,9 @@ def checkout(skus):
     count_b = letters.count("B")
     count_c = letters.count("C")
     count_d = letters.count("D")
+    count_e = letters.count("E")
 
-    if len(skus) != count_a + count_b + count_c + count_d:
+    if len(skus) != count_a + count_b + count_c + count_d + count_e:
         return -1
 
     price_a_items = count_a * ITEMS["A"]
@@ -48,6 +49,7 @@ def checkout(skus):
         + count_c * ITEMS["C"]
         + count_d * ITEMS["D"]
     )
+
 
 
 
