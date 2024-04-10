@@ -35,7 +35,9 @@ def checkout(skus):
         if count_a >= 5:
             price_a_items = int(count_a / 5) * ITEMS["AAAAA"]
             remaining = count_a % 5
-            if remaining != 0:
+            if remaining == 3:
+                price_a_items = remaining * ITEMS["AAA"]
+            else:
                 price_a_items += (
                     int(remaining / 3) * ITEMS["AAA"]
                     if remaining % 3 == 0
@@ -63,6 +65,7 @@ def checkout(skus):
         + count_d * ITEMS["D"]
         + price_e_items
     )
+
 
 
 
